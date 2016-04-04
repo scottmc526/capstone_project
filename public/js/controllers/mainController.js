@@ -1,3 +1,4 @@
 app.controller('mainController', function($scope){
-  $scope.hello = 'sup brah'
+  $scope.key = document.getElementById('key')
+  console.log($scope.key);
 })

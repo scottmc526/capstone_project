@@ -5,7 +5,8 @@
 
 
           <div class='col-xs-8'>Ball One
-            <input type="text" class="score">
+            <input type="text" class="score"  ng-keyup="event=$event">
+            <p id='key'>{{event.keyCode}}</p>
           </div>
           <div class='col-xs-8'>Ball Two
             <input type="text" class='score'>
