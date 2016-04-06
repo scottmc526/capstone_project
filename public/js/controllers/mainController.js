@@ -103,6 +103,8 @@ app.controller('mainController', function($scope){
         // }
 
 
+        //ng-scope on h3 tags
+
 
 
 
