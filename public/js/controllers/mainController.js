@@ -18,25 +18,27 @@ app.controller('mainController', function($scope){
   $scope.calculateScore = function(form) {
 
     var tempArr = $scope.allFrames;
-    var score = 0;
+    $scope.frameOneTotal = false;
+    $scope.score = 0;
 
     tempArr.reverseForEach(function(frameArr, i){
       var total = 0;
       frameArr.forEach(function(item, i){
-        if(item === "x" || item === "/"){
+        if(item === "x"){
           total += 10;
-        }else{
+        } else if (item === '/'){
+          total += (10 - frameArr[i-1])
+        } else {
           total += +item;
+          $scope.frameOneTotal =true;
         }
       })
-      score += total;
+      $scope.score += total;
     })
 
-    console.log(score);
+    console.log($scope.score);
 
-    // for (var i = tempArr.length - 1; i >= 0; i--) {
-    //   if(tempArr)
-    // }
+
 
 
 
@@ -44,26 +46,3 @@ app.controller('mainController', function($scope){
 
 
 })
-
-
-// $scope.frameOneTotal = ''
-// var firstball = ''
-// var nextball = ''
-// var thirdball = ''
-//1st Frame
-// if ($scope.ballTwo.toLowerCase() == 'x') {
-//   $scope.frameOneTotal = "you cant have a strike there"
-// } else if ($scope.ballOne.toLowerCase() == '/'){
-//   $scope.frameOneTotal = 'you cant have a spare there'
-// } else if ($scope.ballOne.toLowerCase == 'x') {
-//   firstball = 10;
-//   nextball = $scope.ballThree;
-//   if ($scope.ballThree.toLowerCase == 'x') {
-//     thirdball = Number($scope.ballFive)
-//   } else {
-//     thirdball = Number($scope.ballFour)
-//   }
-// } else {
-//   firstball = Number($scope.ballOne)
-// }
-// console.log('first:', firstball, 'second:', nextball, 'third:', thirdball);
