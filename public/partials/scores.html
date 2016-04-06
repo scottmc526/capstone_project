@@ -22,14 +22,14 @@
 
 
           <div class='col-xs-8'>Ball Three
-            <input type="text" class="score" name='ball' ng-model='frameTwo[0]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class="score" name='ball' ng-model='frameTwo[0]' ng-change='calculateScore(player)'>
           </div>
           <div class='col-xs-8'>Ball Four
-            <input type="text" class='score' name='ball' ng-model='frameTwo[1]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class='score' name='ball' ng-model='frameTwo[1]' ng-change='calculateScore(player)'>
           </div>
         </div>
         <div class='total'>
-          <h3>{{total}}</h3>
+          <h3></h3>
         </div>
       </div>
       <div class='frame'>
@@ -37,29 +37,29 @@
 
 
           <div class='col-xs-8'>Ball Five
-            <input type="text" class="score" ng-model='frameThree[0]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class="score" ng-model='frameThree[0]' ng-change='calculateScore(player)'>
           </div>
           <div class='col-xs-8'>Ball Six
-            <input type="text" class='score' ng-model='frameThree[1]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class='score' ng-model='frameThree[1]' ng-change='calculateScore(player)'>
           </div>
         </div>
         <div class='total'>
-          <h3>10</h3>
+          <h3></h3>
         </div>
       </div>
       <div class='frame'>
         <div class="balls">
 
 
-          <div class='col-xs-8'>Ball One
-            <input type="text" class="score">
+          <div class='col-xs-8'>Ball Seven
+            <input maxlength="1" type="text" class="score" ng-model='frameFour[0]'>
           </div>
-          <div class='col-xs-8'>Ball Two
-            <input type="text" class='score'>
+          <div class='col-xs-8'>Ball Eight
+            <input maxlength="1" type="text" class='score' ng-model='frameFour[1]'>
           </div>
         </div>
         <div class='total'>
-          <h3>10</h3>
+          <h3></h3>
         </div>
       </div>
       <div class='frame'>
