@@ -24,21 +24,20 @@ app.controller('mainController', function($scope){
       $scope.shoulDisplay = false;
       if (tempArr[i] == 'x') {
         frameScore += 10;
-        console.log(tempArr[i + 2]);
         //regular frame (not 9th or 10th)
         if (i < 16) {
           //if user put strike in second ball erase it
-          if (tempArr[i+1] != '') {
-            tempArr[i+1] = ''
-            next = tempArr[i+2]
-          }
-          // if nextball is a strike use first ball third frame
-          if (next == 'x') {
+          if (tempArr[i+1] != '')
+            tempArr[i+1] = '';
+            next = tempArr[i+2];
+        // if nextball is a strike use first ball third frame
+          if (next == 'x')
             third = tempArr[i+4]
-          } else {
-            //use second ball of second frame
+
+          else
             third = tempArr[i+3]
-          }
+            //use second ball of second frame
+
         }
           // 9th frame
           if (i == 16) {
@@ -53,9 +52,10 @@ app.controller('mainController', function($scope){
           if(next != '' && third !='') { //if next two balls have value
             if(next == 'x') { //if next is strike too
               frameScore += 10
-              if (third = 'x') { // third ball also strike
+              if (third == 'x') {  // third ball also strike
                 frameScore += 10
-              } else {
+              }
+              else {
                 frameScore += parseInt(third) // not strike, take value
               }
             }
