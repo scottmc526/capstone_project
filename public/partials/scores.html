@@ -6,11 +6,11 @@
 
 
           <div class='col-xs-8'>Ball One
-            <input maxlength="1" type="text" class="score" name='ball' ng-model='frameOne[0]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class="score" ng-model='allShots[0]' ng-change='calculateScore(player)'>
 
           </div>
           <div class='col-xs-8'>Ball Two
-            <input maxlength="1" type="text" class='score' name='ball' ng-model='frameOne[1]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class='score' ng-model='allShots[1]' ng-change='calculateScore(player)'>
           </div>
         </div>
         <div class='total'>
@@ -22,10 +22,10 @@
 
 
           <div class='col-xs-8'>Ball Three
-            <input maxlength="1" type="text" class="score" name='ball' ng-model='frameTwo[0]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class="score" ng-model='allShots[2]' ng-change='calculateScore(player)'>
           </div>
           <div class='col-xs-8'>Ball Four
-            <input maxlength="1" type="text" class='score' name='ball' ng-model='frameTwo[1]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class='score' ng-model='allShots[3]' ng-change='calculateScore(player)'>
           </div>
         </div>
         <div class='total'>
@@ -37,10 +37,10 @@
 
 
           <div class='col-xs-8'>Ball Five
-            <input maxlength="1" type="text" class="score" ng-model='frameThree[0]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class="score" ng-model='allShots[4]' ng-change='calculateScore(player)'>
           </div>
           <div class='col-xs-8'>Ball Six
-            <input maxlength="1" type="text" class='score' ng-model='frameThree[1]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class='score' ng-model='allShots[5]' ng-change='calculateScore(player)'>
           </div>
         </div>
         <div class='total'>
@@ -52,10 +52,10 @@
 
 
           <div class='col-xs-8'>Ball Seven
-            <input maxlength="1" type="text" class="score" ng-model='frameFour[0]'>
+            <input maxlength="1" type="text" class="score" ng-model='allShots[6]' ng-change='calculateScore(player)'>
           </div>
           <div class='col-xs-8'>Ball Eight
-            <input maxlength="1" type="text" class='score' ng-model='frameFour[1]'>
+            <input maxlength="1" type="text" class='score' ng-model='allShots[7]' ng-change='calculateScore(player)'>
           </div>
         </div>
         <div class='total'>
@@ -66,26 +66,11 @@
         <div class="balls">
 
 
-          <div class='col-xs-8'>Ball One
-            <input type="text" class="score">
+          <div class='col-xs-8'>Ball Nine
+            <input maxlength="1" type="text" class="score" ng-model='allShots[8]' ng-change='calculateScore(player)'>
           </div>
-          <div class='col-xs-8'>Ball Two
-            <input type="text" class='score'>
-          </div>
-        </div>
-        <div class='total'>
-          <h3>10</h3>
-        </div>
-      </div>
-      <div class='frame'>
-        <div class="balls">
-
-
-          <div class='col-xs-8'>Ball One
-            <input type="text" class="score">
-          </div>
-          <div class='col-xs-8'>Ball Two
-            <input type="text" class='score'>
+          <div class='col-xs-8'>Ball Ten
+            <input maxlength="1" type="text" class='score' ng-model='allShots[9]' ng-change='calculateScore(player)'>
           </div>
         </div>
         <div class='total'>
@@ -96,26 +81,11 @@
         <div class="balls">
 
 
-          <div class='col-xs-8'>Ball One
-            <input type="text" class="score">
+          <div class='col-xs-8'>Ball Elev
+            <input maxlength="1" type="text" class="score" ng-model='allShots[10]' ng-change='calculateScore(player)'>
           </div>
-          <div class='col-xs-8'>Ball Two
-            <input type="text" class='score'>
-          </div>
-        </div>
-        <div class='total'>
-          <h3>10</h3>
-        </div>
-      </div>
-      <div class='frame'>
-        <div class="balls">
-
-
-          <div class='col-xs-8'>Ball One
-            <input type="text" class="score">
-          </div>
-          <div class='col-xs-8'>Ball Two
-            <input type="text" class='score'>
+          <div class='col-xs-8'>Ball Twel
+            <input maxlength="1" type="text" class='score' ng-model='allShots[11]' ng-change='calculateScore(player)'>
           </div>
         </div>
         <div class='total'>
@@ -126,11 +96,11 @@
         <div class="balls">
 
 
-          <div class='col-xs-8'>Ball One
-            <input type="text" class="score">
+          <div class='col-xs-8'>Ball Thirt
+            <input maxlength="1" type="text" class="score" ng-model='allShots[12]' ng-change='calculateScore(player)'>
           </div>
-          <div class='col-xs-8'>Ball Two
-            <input type="text" class='score'>
+          <div class='col-xs-8'>Ball Fourt
+            <input maxlength="1" type="text" class='score' ng-model='allShots[13]' ng-change='calculateScore(player)'>
           </div>
         </div>
         <div class='total'>
@@ -141,11 +111,44 @@
         <div class="balls">
 
 
-          <div class='col-xs-8'>Ball One
-            <input type="text" class="score">
+          <div class='col-xs-8'>Ball Fif
+            <input maxlength="1" type="text" class="score" ng-model='allShots[14]' ng-change='calculateScore(player)'>
           </div>
-          <div class='col-xs-8'>Ball Two
-            <input type="text" class='score'>
+          <div class='col-xs-8'>Ball Sixt
+            <input  maxlength="1" type="text" class='score' ng-model='allShots[15]' ng-change='calculateScore(player)'>
+          </div>
+        </div>
+        <div class='total'>
+          <h3>10</h3>
+        </div>
+      </div>
+      <div class='frame'>
+        <div class="balls">
+
+
+          <div class='col-xs-8'>Ball SevT
+            <input maxlength="1" type="text" class="score" ng-model='allShots[16]' ng-change='calculateScore(player)'>
+          </div>
+          <div class='col-xs-8'>Ball EigT
+            <input maxlength="1" type="text" class='score' ng-model='allShots[17]' ng-change='calculateScore(player)'>
+          </div>
+        </div>
+        <div class='total'>
+          <h3>10</h3>
+        </div>
+      </div>
+      <div class='frame'>
+        <div class="balls">
+
+
+          <div class='col-xs-8'>Ball NinT
+            <input maxlength="1" type="text" class="score" ng-model='allShots[18]' ng-change='calculateScore(player)'>
+          </div>
+          <div class='col-xs-8'>Ball TwenT
+            <input maxlength="1" type="text" class='score' ng-model='allShots[19]' ng-change='calculateScore(player)'>
+          </div>
+          <div class='col-xs-8'>Ball TwenT1
+            <input maxlength="1" type="text" class='score' ng-model='allShots[20]' ng-change='calculateScore(player)'>
           </div>
         </div>
         <div class='total'>

@@ -7,45 +7,39 @@ Array.prototype.reverseForEach = function(callback){
 
 
 app.controller('mainController', function($scope){
-  $scope.frameOne = [null, null];
-  $scope.frameTwo = [null, null];
-  $scope.frameThree = [null, null];
-  $scope.frameFour = [null, null];
-  $scope.allFrames = [];
-  $scope.allFrames.push($scope.frameOne, $scope.frameTwo, $scope.frameThree, $scope.frameFour)
+
 
   $scope.allShots = [];
-
-
-
-  // $scope.calculateScore = function(form) {
-  //
-  //   var tempArr = $scope.allFrames;
-  //   $scope.frameOneTotal = false;
-  //   $scope.score = 0;
-  //
-  //   tempArr.reverseForEach(function(frameArr, i){
-  //     var total = 0;
-  //     frameArr.forEach(function(item, i){
-  //       if(item === "x"){
-  //         total += 10;
-  //       } else if (item === '/'){
-  //         total += (10 - frameArr[i-1])
-  //       } else {
-  //         total += +item;
-  //         $scope.frameOneTotal =true;
-  //       }
-  //     })
-  //     $scope.score += total;
-  //   })
-  // }
-
+  $scope.score = 0;
 
   $scope.calculateScore = function(form) {
-    var tempArr = $scope.allFrames;
-    $scope.score = 0
+    var nextBall = ''
+    var thirdBall = ''
+    var tempArr = $scope.allShots
+    console.log(tempArr);
     for (var i = 0; i < tempArr.length; i++) {
-      console.log(tempArr[0]);
+      var frameScore = 0
+      $scope.shoulDisplay = false;
+      if (tempArr[i].toLowerCase() == 'x') {
+        frameScore += 10;
+        if (i < 16) {
+
+          if (tempArr[i+1] != '') {
+            tempArr[i+1] = ''
+            nextBall = tempArr[i+2]
+          }
+
+
+        }
+
+
+
+
+
+
+
+      }
+
     }
   }
 })
