@@ -11,6 +11,7 @@ app.controller('mainController', function($scope){
 
   $scope.allShots = [];
   $scope.score = 0;
+  $scope.shouldDisplay = false;
 
   $scope.calculateScore = function(form) {
 
@@ -18,10 +19,10 @@ app.controller('mainController', function($scope){
     var next = ''
     var third = ''
     var tempArr = $scope.allShots
+    var display = false;
 
     for (var i = 0; i <= tempArr.length; i+=2) {
       var frameScore = 0
-      $scope.shoulDisplay = false;
       if (tempArr[i] == 'x') {
         frameScore += 10;
         //regular frame (not 9th or 10th)
@@ -54,8 +55,6 @@ app.controller('mainController', function($scope){
               frameScore += 10
               if (third == 'x') {  // third ball also strike
                 frameScore += 10
-                $scope.score += frameScore;
-                console.log($scope.score);
               }
               else {
                 frameScore += parseInt(third) // not strike, take value
@@ -72,7 +71,7 @@ app.controller('mainController', function($scope){
                 frameScore += parseInt(third)
               }
             }
-            $scope.shoulDisplay = true;
+            display = true
           }
       }
         // not strike so its either spare or open
@@ -82,10 +81,10 @@ app.controller('mainController', function($scope){
             if(tempArr[i+2] != '') { //check next ball
               if (tempArr[i+2] == 'x'){
                 frameScore += 10;
-                $scope.shoulDisplay = true;
+                display = true
               } else {
                 frameScore += parseInt(tempArr[i+2])
-                $scope.shoulDisplay = true;
+                display = true;
               }
             }
           }
@@ -95,12 +94,20 @@ app.controller('mainController', function($scope){
           }
         }
         totalScore += frameScore
+        if (frameScore !== NaN) {
+          console.log(frameScore);
+         $scope.score += frameScore
 
-        // if ($scope.shoulDisplay) {
+        }
+        // if (display) {
+        //   if (frameScore === NaN) {
+        //     $scope.shouldDisplay = false;
+        //   } else{
+        //     $scope.shouldDisplay = true;
         //
-        //
-        //
-        // }
+        //   }
+         //}
+
 
 
         //ng-scope on h3 tags
