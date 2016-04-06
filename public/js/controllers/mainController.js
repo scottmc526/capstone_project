@@ -10,8 +10,6 @@ app.controller('mainController', function($scope){
 
 
   $scope.allShots = [];
-  console.log('outside func');
-  console.log($scope.allShots);
   $scope.score = 0;
 
   $scope.calculateScore = function(form) {
@@ -26,10 +24,9 @@ app.controller('mainController', function($scope){
       $scope.shoulDisplay = false;
       if (tempArr[i] == 'x') {
         frameScore += 10;
-        console.log(frameScore);
+        console.log(tempArr[i + 2]);
         //regular frame (not 9th or 10th)
         if (i < 16) {
-          console.log('haaaaay');
           //if user put strike in second ball erase it
           if (tempArr[i+1] != '') {
             tempArr[i+1] = ''
@@ -42,6 +39,7 @@ app.controller('mainController', function($scope){
             //use second ball of second frame
             third = tempArr[i+3]
           }
+        }
           // 9th frame
           if (i == 16) {
             next = tempArr[i+2]
@@ -74,7 +72,6 @@ app.controller('mainController', function($scope){
             }
             $scope.shoulDisplay = true;
           }
-        }
       }
         // not strike so its either spare or open
         else if (tempArr[i] != '' && tempArr[i+1] != ''){
