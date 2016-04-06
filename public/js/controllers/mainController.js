@@ -54,6 +54,8 @@ app.controller('mainController', function($scope){
               frameScore += 10
               if (third == 'x') {  // third ball also strike
                 frameScore += 10
+                $scope.score += frameScore;
+                console.log($scope.score);
               }
               else {
                 frameScore += parseInt(third) // not strike, take value
@@ -94,11 +96,11 @@ app.controller('mainController', function($scope){
         }
         totalScore += frameScore
 
-        if ($scope.shoulDisplay) {
-          var k = i / 2
-
-
-        }
+        // if ($scope.shoulDisplay) {
+        //
+        //
+        //
+        // }
 
 
 
