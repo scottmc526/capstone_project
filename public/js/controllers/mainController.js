@@ -25,18 +25,18 @@ app.controller('mainController', function($scope){
       var total = 0;
       frameArr.forEach(function(item, i){
         if(item === "x"){
+          frameArr[i+1] = ''
           total += 10;
         } else if (item === '/'){
           total += (10 - frameArr[i-1])
         } else {
           total += +item;
-          $scope.frameOneTotal =true;
+          $scope.frameOneTotal = true;
         }
       })
       $scope.score += total;
     })
 
-    console.log($scope.score);
 
 
 
