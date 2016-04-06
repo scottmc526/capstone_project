@@ -7,42 +7,80 @@ Array.prototype.reverseForEach = function(callback){
 
 
 app.controller('mainController', function($scope){
-  $scope.frameOne = [null, null];
-  $scope.frameTwo = [null, null];
-  $scope.frameThree = [null, null];
-  $scope.allFrames = [];
-  $scope.allFrames.push($scope.frameOne, $scope.frameTwo, $scope.frameThree)
+  $scope.gameTotal = 0;
+  $scope.frames = [
+    [null, null],
+    [null, null],
+    [null, null],
+    [null, null],
+    [null, null],
+    [null, null],
+    [null, null],
+    [null, null],
+    [null, null],
+    [null, null],
+  ]
+
+  $scope.calculateScore = function() {
+    $scope.frameTotal = $scope.frames.map(function(frame, i){
+      return frame.reduce(function(prev, curr){
+        if (curr == 'x') {
+          if ($scope.frames[i+1][0] == 'x') {
+            if($scope.frames[i+2][0] == 'x') {
+              curr = 30
+            } else {
+              curr = 20 + +$scope.frames[i+2][0]
+            }
+          } else {
+            curr = 10 + +$scope.frames[i+1][0] + +$scope.frames[i+1][1]
+          }
 
 
 
-  $scope.calculateScore = function(form) {
-
-    var tempArr = $scope.allFrames;
-    $scope.frameOneTotal = false;
-    $scope.score = 0;
-
-    tempArr.reverseForEach(function(frameArr, i){
-      var total = 0;
-      frameArr.forEach(function(item, i){
-        if(item === "x"){
-          frameArr[i+1] = ''
-          total += 10;
-        } else if (item === '/'){
-          total += (10 - frameArr[i-1])
-        } else {
-          total += +item;
-          $scope.frameOneTotal = true;
+        } else if (curr == '/') {
+          curr = 10 - prev + +$scope.frames[i+1][0]
         }
-      })
-      $scope.score += total;
+        return +prev + +curr
+      }, 0)
+    })
+
+    $scope.gameTotal = $scope.frameTotal.reduce(function(prev, curr){
+      return prev + curr
     })
 
 
 
-
-
-
   }
+
+  // $scope.calculateScore = function(form) {
+  //
+  //   var tempArr = $scope.allFrames;
+  //   $scope.frameOneTotal = false;
+  //   $scope.score = 0;
+  //
+  //   tempArr.reverseForEach(function(frameArr, i){
+  //     console.log(i);
+  //     var total = 0;
+  //     frameArr.forEach(function(item, i){
+  //       if(item === "x"){
+  //         frameArr[i+1] = ''
+  //         total += 10;
+  //       } else if (item === '/'){
+  //         total += (10 - frameArr[i-1])
+  //       } else {
+  //         total += +item;
+  //         $scope.frameOneTotal = true;
+  //       }
+  //     })
+  //     $scope.score += total;
+  //   })
+  //
+  //
+  //
+  //
+  //
+  //
+  // }
 
 
 })

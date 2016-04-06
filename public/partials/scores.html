@@ -1,23 +1,25 @@
 <form name='player' ng-submit='frameOne()'>
 <div class='container'>
     <div class='scoreCard'>
-      <div class='frame'>
+      <h2>{{gameTotal}}</h2>
+      <div class='frame' ng-repeat='frame in frames'>
         <div class="balls">
 
 
           <div class='col-xs-8'>Ball One
-            <input maxlength="1" type="text" class="score" name='ball' ng-model='frameOne[0]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class="score" name='ball' ng-model='frame[0]' ng-change='calculateScore(player)'>
 
           </div>
           <div class='col-xs-8'>Ball Two
-            <input maxlength="1" type="text" class='score' name='ball' ng-model='frameOne[1]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class='score' name='ball' ng-model='frame[1]' ng-change='calculateScore(player)'>
           </div>
         </div>
         <div class='total'>
-          <h3 ng-show='frameOneTotal'>{{score}}</h3>
+          <h3>{{frameTotal[$index]}}</h3>
+          <br>
         </div>
       </div>
-      <div class='frame'>
+      <!-- <div class='frame'>
         <div class="balls">
 
 
@@ -151,7 +153,7 @@
         <div class='total'>
           <h3>10</h3>
         </div>
-      </div>
+      </div> -->
 
 
 
