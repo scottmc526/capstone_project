@@ -34,7 +34,10 @@ app.controller('mainController', function($scope){
             } else {
               curr = 20 + +$scope.frames[i+2][0]
             }
-          } else {
+          } else if ($scope.frames[i+1][1] == '/'){
+            curr = 20
+          }
+           else {
             curr = 10 + +$scope.frames[i+1][0] + +$scope.frames[i+1][1]
           }
         } else if (curr == '/') {
