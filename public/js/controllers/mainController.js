@@ -77,11 +77,18 @@ app.controller('mainController', function($scope){
     })
 
     $scope.frameTenTotal = $scope.frameTen.reduce(function(prev, curr){
-      console.log(curr);
-      if (curr == 'x') {
+      if (curr == 'x' || curr == 'X') {
         curr = 10 + +$scope.frameTen[1] - $scope.frameTen[1]
-        if ($scope.frameTen[1] == 'x') {
+        if ($scope.frameTen[1] == 'x' || $scope.frameTen[1] == 'X') {
           curr = 10
+        }
+      }
+      else if (curr == '/') {
+        curr = 10 + +$scope.frameTen[2]
+        if ($scope.frameTen[2] == 'x' || $scope.frameTen[2] == 'X') {
+          curr = 10
+        } else {
+          curr = 10 - prev
         }
       }
       return +prev + +curr
