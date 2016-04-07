@@ -8,6 +8,7 @@ Array.prototype.reverseForEach = function(callback){
 
 app.controller('mainController', function($scope){
   $scope.gameTotal = 0;
+  $scope.frameTenTotal = 0;
   $scope.frames = [
     [null, null],
     [null, null],
@@ -44,6 +45,7 @@ app.controller('mainController', function($scope){
             }
           }
         }
+
         //if first shot is strike
         if (curr == 'x' || curr == 'X') {
           if ($scope.frames[i][1] !== '') {
@@ -73,7 +75,20 @@ app.controller('mainController', function($scope){
         return +prev + +curr
       }, 0)
     })
-    $scope.gameTotal = $scope.frameTotal.reduce(function(prev, curr){
+
+    $scope.frameTenTotal = $scope.frameTen.reduce(function(prev, curr){
+      console.log(curr);
+      if (curr == 'x') {
+        curr = 10 + +$scope.frameTen[1] - $scope.frameTen[1]
+        if ($scope.frameTen[1] == 'x') {
+          curr = 10
+        }
+      }
+      return +prev + +curr
+    }, 0)
+
+
+    $scope.gameTotal = $scope.frameTenTotal + $scope.frameTotal.reduce(function(prev, curr){
       return prev + curr
     })
     // $scope.frameTenTotal = 300 - $scope.gameTotal
