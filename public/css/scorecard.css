@@ -13,7 +13,7 @@
 
 
 .frame {
-  background-color: white;
+  background-color: #fac68e;
   border: 1px solid black;
   height: 100%;
   width: 10%;
@@ -40,6 +40,9 @@
   margin-top: 5%;
   width: 100%;
   height: 30%;
+}
+.bowlingScore {
+  font-family: 'Prata', serif;
 }
 
 @media (max-width: 770px) {

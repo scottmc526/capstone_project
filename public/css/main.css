@@ -9,14 +9,16 @@ a {
 
 .header {
   margin-top: 1%;
-  background-image: url('http://static.squarespace.com/static/53a63f26e4b05b5fe85dcddc/t/53ac233fe4b0e2153d295b57/1403790143186/Ball%20&%20Pins.jpg');
   height: 100vh;
   width: 100vw;
-  border: 5px solid white;
-  border-radius: 3px;
   display: flex;
-  justify-content: flex-start;;
   align-items: center;
   flex-direction: column;
-  color: white;
+  color: #000;
+  font-family: 'Prata', serif;
+  padding: 2%;
+}
+
+.btn {
+  border: 2px solid #8b3923;
 }
