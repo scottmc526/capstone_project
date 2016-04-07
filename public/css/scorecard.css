@@ -23,6 +23,9 @@
   flex-direction: column;
   justify-content: space-around;
 }
+.lastFrame {
+  width: 20%;
+}
 .balls {
   display: flex;
   flex-direction: row;

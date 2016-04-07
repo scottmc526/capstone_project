@@ -18,8 +18,9 @@ app.controller('mainController', function($scope){
     [null, null],
     [null, null],
     [null, null],
-    [null, null, null],
   ]
+
+  $scope.frameTen = [null, null, null]
 
   $scope.calculateScore = function() {
     $scope.frameTotal = $scope.frames.map(function(frame, i){

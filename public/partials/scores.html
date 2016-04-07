@@ -14,9 +14,29 @@
             <p class='bowlingScore'>Ball Two</p>
             <input maxlength="1" type="text" class='score' ng-model='frame[1]' ng-change='calculateScore(player)'>
           </div>
-          <!-- <div class='col-xs-8' ng-show='frame = frame[9]'>Ball three
-            <input maxlength="1" type="text" class='score' ng-model='frame[2]' ng-change='calculateScore(player)'>
-          </div> -->
+        </div>
+        <div class='total'>
+          <h3 class='bowlingScore'>{{frameTotal[$index]}}</h3>
+          <br>
+        </div>
+      </div>
+      <div class='frame lastFrame'>
+        <div class="balls">
+
+
+          <div class='col-xs-8'>
+            <p class="bowlingScore">Ball One</p>
+            <input maxlength="1" type="text" class="score" ng-model='frameTen[0]' ng-change='calculateScore(player)'>
+
+          </div>
+          <div class='col-xs-8'>
+            <p class='bowlingScore'>Ball Two</p>
+            <input maxlength="1" type="text" class='score' ng-model='frameTen[1]' ng-change='calculateScore(player)'>
+          </div>
+          <div class='col-xs-8'>
+            <p class='bowlingScore'>Ball Three</p>
+            <input maxlength="1" type="text" class='score' ng-model='frameTen[2]' ng-change='calculateScore(player)'>
+          </div>
         </div>
         <div class='total'>
           <h3 class='bowlingScore'>{{frameTotal[$index]}}</h3>
