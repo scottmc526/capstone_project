@@ -25,6 +25,19 @@ app.controller('mainController', function($scope){
   $scope.calculateScore = function() {
     $scope.frameTotal = $scope.frames.map(function(frame, i){
       return frame.reduce(function(prev, curr){
+        // 9th frame
+        if (i === 8) {
+          if (curr ==  'x' || curr == 'X') {
+            curr = 10 + +$scope.frameTen[0] + +$scope.frameTen[1]
+            if ($scope.frameTen[0] == 'x' || $scope.frameTen[0] == 'X') {
+              curr = 20
+              }
+            if ($scope.frameTen[1] == 'x' || $scope.frameTen[1] == 'X') {
+              curr = 30
+            }
+          }
+        }
+        //if first shot is strike
         if (curr == 'x' || curr == 'X') {
           if ($scope.frames[i][1] !== '') {
             $scope.frames[i][1] = ''
@@ -41,6 +54,7 @@ app.controller('mainController', function($scope){
            else {
             curr = 10 + +$scope.frames[i+1][0] + +$scope.frames[i+1][1]
           }
+          //if second shot is spare
         } else if (curr == '/') {
           if ($scope.frames[i+1][0] == 'x' || $scope.frames[i+1][0] == 'X') {
             curr = 20 - prev
@@ -52,10 +66,10 @@ app.controller('mainController', function($scope){
         return +prev + +curr
       }, 0)
     })
-
     $scope.gameTotal = $scope.frameTotal.reduce(function(prev, curr){
       return prev + curr
     })
+    // $scope.frameTenTotal = 300 - $scope.gameTotal
 
 
 
