@@ -18,15 +18,18 @@ app.controller('mainController', function($scope){
     [null, null],
     [null, null],
     [null, null],
-    [null, null],
+    [null, null, null],
   ]
 
   $scope.calculateScore = function() {
     $scope.frameTotal = $scope.frames.map(function(frame, i){
       return frame.reduce(function(prev, curr){
-        if (curr == 'x') {
-          if ($scope.frames[i+1][0] == 'x') {
-            if($scope.frames[i+2][0] == 'x') {
+        if (curr == 'x' || curr == 'X') {
+          if ($scope.frames[i][1] !== '') {
+            $scope.frames[i][1] = ''
+          }
+          if ($scope.frames[i+1][0] == 'x' || $scope.frames[i+1][0] == 'X' ) {
+            if($scope.frames[i+2][0] == 'x' || $scope.frames[i+2][0] == 'X') {
               curr = 30
             } else {
               curr = 20 + +$scope.frames[i+2][0]
@@ -34,11 +37,13 @@ app.controller('mainController', function($scope){
           } else {
             curr = 10 + +$scope.frames[i+1][0] + +$scope.frames[i+1][1]
           }
-
-
-
         } else if (curr == '/') {
-          curr = 10 - prev + +$scope.frames[i+1][0]
+          if ($scope.frames[i+1][0] == 'x' || $scope.frames[i+1][0] == 'X') {
+            curr = 20 - prev
+          } else {
+            curr = 10 - prev + +$scope.frames[i+1][0]
+
+          }
         }
         return +prev + +curr
       }, 0)
