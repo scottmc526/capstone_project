@@ -36,6 +36,13 @@ app.controller('mainController', function($scope){
               curr = 30
             }
           }
+          if (curr == '/') {
+            if ($scope.frameTen[0] == 'x' || $scope.frameTen[0] == 'X') {
+              curr = 20 - prev
+            } else {
+              curr = 10 - prev + +$scope.frameTen[0]
+            }
+          }
         }
         //if first shot is strike
         if (curr == 'x' || curr == 'X') {
@@ -70,41 +77,5 @@ app.controller('mainController', function($scope){
       return prev + curr
     })
     // $scope.frameTenTotal = 300 - $scope.gameTotal
-
-
-
-
   }
-
-  // $scope.calculateScore = function(form) {
-  //
-  //   var tempArr = $scope.allFrames;
-  //   $scope.frameOneTotal = false;
-  //   $scope.score = 0;
-  //
-  //   tempArr.reverseForEach(function(frameArr, i){
-  //     console.log(i);
-  //     var total = 0;
-  //     frameArr.forEach(function(item, i){
-  //       if(item === "x"){
-  //         frameArr[i+1] = ''
-  //         total += 10;
-  //       } else if (item === '/'){
-  //         total += (10 - frameArr[i-1])
-  //       } else {
-  //         total += +item;
-  //         $scope.frameOneTotal = true;
-  //       }
-  //     })
-  //     $scope.score += total;
-  //   })
-  //
-  //
-  //
-  //
-  //
-  //
-  // }
-
-
 })
