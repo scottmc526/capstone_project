@@ -26,9 +26,10 @@ app.controller('mainController', function($scope){
   $scope.calculateScore = function() {
     $scope.frameTotal = $scope.frames.map(function(frame, i){
       return frame.reduce(function(prev, curr){
+
         // 9th frame
         if (i === 8) {
-          if (curr ==  'x' || curr == 'X') {
+          if (curr == 'x' || curr == 'X') {
             curr = 10 + +$scope.frameTen[0] + +$scope.frameTen[1]
             if ($scope.frameTen[0] == 'x' || $scope.frameTen[0] == 'X') {
               curr = 20
@@ -98,6 +99,5 @@ app.controller('mainController', function($scope){
     $scope.gameTotal = $scope.frameTenTotal + $scope.frameTotal.reduce(function(prev, curr){
       return prev + curr
     })
-    // $scope.frameTenTotal = 300 - $scope.gameTotal
   }
 })
