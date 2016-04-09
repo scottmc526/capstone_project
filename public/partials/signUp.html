@@ -1,6 +1,11 @@
-<label for="">Email</label>
-<input type='text' class='form-control' placeholder="bowlingis@fun.com">
-<label for="">Password</label>
-<input type='password' class='form-control' placeholder="password">
-<button class='btn btn-warning' ng-submit='stuff()'>Submit</button>
-<p>{{hello}}</p>
+<form name='form' ng-submit='signUp()'>
+  <label for="">Name</label>
+  <input type='text' required class='form-control' placeholder="Pete Weber" ng-model='name'>
+  <label for="">Add a Photo</label>
+  <input type='text' class='form-control' placeholder="something.jpg" ng-model='photo'>
+  <label for="">Email</label>
+  <input type='text' required class='form-control' placeholder="bowlingis@fun.com" ng-model='email'>
+  <label for="">Password</label>
+  <input type='password' required class='form-control' placeholder="password" ng-model='password'>
+  <button class='btn btn-warning' ng-click='signUp()' ng-disabled='form.$invalid'>Submit</button>
+</form>

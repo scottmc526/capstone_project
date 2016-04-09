@@ -1,7 +1,7 @@
 app.controller('signUpController', function($scope){
-  $scope.hello = 'hello'
-  $scope.stuff = function() {
-    console.log('hello');
+  $scope.signUp= function() {
+    console.log($scope.email);
+    console.log($scope.password);
   }
 
 })
