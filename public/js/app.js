@@ -11,6 +11,10 @@ app.config(function($routeProvider, $locationProvider) {
     templateUrl: 'partials/scores.html',
     controller: 'mainController'
   })
+  .when('/signup', {
+    templateUrl: 'partials/signUp.html',
+    controller: 'signUpController'
+  })
 
 
 
