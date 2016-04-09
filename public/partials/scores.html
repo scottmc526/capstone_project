@@ -8,8 +8,7 @@
 
           <div class='col-xs-8'>
             <p class="bowlingScore">Ball One</p>
-            <input maxlength="1" type="text" class="score" ng-model='frame[0]' ng-change='calculateScore()'>
-
+            <input maxlength="1" type="text" class="score" ng-model='frame[0]' ng-keyup="event=$event" ng-change='calculateScore()'>
           </div>
           <div class='col-xs-8'>
             <p class='bowlingScore'>Ball Two</p>
