@@ -1,3 +1,4 @@
+<button class='btn btn-warning' ng-click='showP2 = !showP2'>Add Second Player</button>
 <form name='player'>
 <div class='container'>
     <div class='scoreCard'>
@@ -7,12 +8,12 @@
 
           <div class='col-xs-8'>
             <p class="bowlingScore">Ball One</p>
-            <input maxlength="1" type="text" class="score" ng-model='frame[0]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class="score" ng-model='frame[0]' ng-change='calculateScore()'>
 
           </div>
           <div class='col-xs-8'>
             <p class='bowlingScore'>Ball Two</p>
-            <input maxlength="1" type="text" class='score' ng-model='frame[1]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class='score' ng-model='frame[1]' ng-change='calculateScore()'>
           </div>
         </div>
         <div class='total'>
@@ -26,16 +27,16 @@
 
           <div class='col-xs-8'>
             <p class="bowlingScore">Ball One</p>
-            <input maxlength="1" type="text" class="score" ng-model='frameTen[0]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class="score" ng-model='frameTen[0]' ng-change='calculateScore()'>
 
           </div>
           <div class='col-xs-8'>
             <p class='bowlingScore'>Ball Two</p>
-            <input maxlength="1" type="text" class='score' ng-model='frameTen[1]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class='score' ng-model='frameTen[1]' ng-change='calculateScore()'>
           </div>
           <div class='col-xs-8'>
             <p class='bowlingScore'>Ball Three</p>
-            <input maxlength="1" type="text" class='score' ng-model='frameTen[2]' ng-change='calculateScore(player)'>
+            <input maxlength="1" type="text" class='score' ng-model='frameTen[2]' ng-change='calculateScore()'>
           </div>
         </div>
         <div class='total'>
@@ -46,4 +47,51 @@
     </div>
     <h2 class='totals bowlingScore'>Total Score: {{gameTotal}}</h2>
   </div>
+</form>
+<form name='playerTwo' ng-show='showP2'>
+  <div class='container'>
+    <div class='scoreCard'>
+      <div class='frame' ng-repeat='framey in framesPTwo'>
+        <div class="balls">
+          <div class='col-xs-8'>
+            <p class="bowlingScore">Ball One</p>
+            <input maxlength="1" type="text" class="score" ng-model='framey[0]' ng-change='calculateScorePTwo()'>
+
+          </div>
+          <div class='col-xs-8'>
+            <p class='bowlingScore'>Ball Two</p>
+            <input maxlength="1" type="text" class='score' ng-model='framey[1]' ng-change='calculateScorePTwo()'>
+          </div>
+        </div>
+        <div class='total'>
+          <h3 class='bowlingScore'>{{frameTotalP2[$index]}}</h3>
+          <br>
+        </div>
+        </div>
+        <div class='frame lastFrame'>
+          <div class="balls">
+
+
+            <div class='col-xs-8'>
+              <p class="bowlingScore">Ball One</p>
+              <input maxlength="1" type="text" class="score" ng-model='frameTenPTwo[0]' ng-change='calculateScorePTwo()'>
+
+            </div>
+            <div class='col-xs-8'>
+              <p class='bowlingScore'>Ball Two</p>
+              <input maxlength="1" type="text" class='score' ng-model='frameTenPTwo[1]' ng-change='calculateScorePTwo()'>
+            </div>
+            <div class='col-xs-8'>
+              <p class='bowlingScore'>Ball Three</p>
+              <input maxlength="1" type="text" class='score' ng-model='frameTenPTwo[2]' ng-change='calculateScorePTwo()'>
+            </div>
+          </div>
+          <div class='total'>
+            <h3 class='bowlingScore'>{{frameTenTotalPTwo}}</h3>
+            <br>
+          </div>
+        </div>
+      </div>
+      <h2 class='totals bowlingScore'>Total Score: {{gameTotalPTwo}}</h2>
+    </div>
 </form>
