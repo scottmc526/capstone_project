@@ -27,7 +27,6 @@ router.post('/login', function(req,res,next){
 
 router.post('/newuser', function(req, res, next){
   var crypted = bcrypt.hashSync(req.body.password, 8)
-  console.log(crypted);
   User().where('email', req.body.email).first().then(function(results){
     if(!results){
       User().insert({email:req.body.email, password: crypted, name: req.body.namey, img_url: req.body.photo}).then(function(result){
