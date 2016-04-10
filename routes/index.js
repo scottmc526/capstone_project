@@ -35,7 +35,7 @@ router.post('/newuser', function(req, res, next){
         res.redirect('/#/score')
       })
     } else {
-      res.render('/#/')
+      res.redirect('/#/')
     }
   })
 })
