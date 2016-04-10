@@ -32,7 +32,6 @@ app.controller('mainController', function($scope, $cookies){
   $scope.calculateScore = function() {
     $scope.frameTotal = $scope.frames.map(function(frame, i){
       return frame.reduce(function(prev, curr){
-
         // 9th frame
         if (i === 8) {
           if (curr == 'x' || curr == 'X') {
@@ -106,4 +105,11 @@ app.controller('mainController', function($scope, $cookies){
       return prev + curr
     })
   }
+
+
+
+
+
+
+
 })
