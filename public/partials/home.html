@@ -3,11 +3,11 @@
   <h2>This app can teach you!</h2>
   <a href="/#/score"><button class='btn btn-warning' type="button" name="button">Get Started Now</button></a>
   <h2>Or login To save your Score</h2>
-  <form action="" method='POST'>
-    <input class='login' type="text" placeholder="happy@people.com" required>
-    <input class='login' type="password" placeholder="password" required>
+  <form action="/login" method='POST'>
+    <input class='login' type="text" placeholder="happy@people.com" required name='email'>
+    <input class='login' type="password" placeholder="password" required name='password'>
     <br>
-    <button class='sub btn btn-warning'>Submit</button>
+    <button type='submit' class='sub btn btn-warning'>Submit</button>
   </form>
   <h2>Don't have an account? <a href='/#/signup'>Sign Up </a></h2>
 

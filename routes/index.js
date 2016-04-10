@@ -8,15 +8,22 @@ function User () {
   return knex('users')
 }
 
-/* GET home page. */
-// router.post('/', function(req, res, next) {
-//   var obj = {};
-//   obj.name = req.body.namey,
-//   obj.email = req.body.email,
-//   User().insert(obj).then(function(result){
-//     res.json(result)
-//   })
-// });
+router.post('/login', function(req,res,next){
+  User().where({email:req.body.email}).first().then(function(found){
+    if (found) {
+      if (bcrypt.compareSync(req.body.password, found.password)){
+        res.cookie('user', req.body.email)
+        res.redirect('/#/score')
+      } else {
+        res.send('invalid username or password')
+        res.redirect('/#/')
+      }
+    } else {
+      res.send('invalid')
+      res.redirect('/#/')
+    }
+  })
+})
 
 router.post('/newuser', function(req, res, next){
   var crypted = bcrypt.hashSync(req.body.password, 8)
