@@ -11,6 +11,7 @@ app.controller('mainController', function($scope, $cookies){
 
   $scope.loggedIn = $cookies.get('user')
   $scope.loggedIn ? $scope.logOut = true : $scope.logOut = false;
+  $scope.scoreboard = 0;
 
 
   $scope.gameTotal = 0;
@@ -110,7 +111,8 @@ app.controller('mainController', function($scope, $cookies){
 
     socket.emit('updateScore', $scope.gameTotal)
     socket.on('updateScore', function(data){
-      console.log(data);
+      $scope.scoreboard = data;
+      console.log($scope.scoreboard);
     })
 
 
