@@ -109,6 +109,7 @@ app.controller('mainController', function($scope, $cookies){
 
 
 
+
     socket.emit('updateScore', $scope.gameTotal)
     socket.on('updateScore', function(data){
       $scope.scoreboard = data;
@@ -118,8 +119,9 @@ app.controller('mainController', function($scope, $cookies){
 
   }
 
-
-
+  socket.on('init', function (data) {
+    console.log(data);
+  });
 
 
 
