@@ -1,10 +1,9 @@
-app.service('toScore', function(){
-  this.createArray = function(num) {
-    var arr = [];
-    arr.push(num);
-    return arr;
+app.factory('info', function($http){
+  return {
+    create: function(obj){
+      return $http.post('/', obj)
   }
-
+}
 
 
 
