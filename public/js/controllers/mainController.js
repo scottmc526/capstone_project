@@ -30,6 +30,7 @@ app.controller('mainController', function($scope, $cookies){
   $scope.frameTen = [null, null, null]
 
   $scope.calculateScore = function() {
+
     $scope.frameTotal = $scope.frames.map(function(frame, i){
       return frame.reduce(function(prev, curr){
         // 9th frame
@@ -104,7 +105,17 @@ app.controller('mainController', function($scope, $cookies){
     $scope.gameTotal = $scope.frameTenTotal + $scope.frameTotal.reduce(function(prev, curr){
       return prev + curr
     })
+
+
+
+    socket.emit('updateScore', $scope.gameTotal)
+    socket.on('updateScore', function(data){
+      console.log(data);
+    })
+
+
   }
+
 
 
 
