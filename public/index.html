@@ -10,25 +10,28 @@
     <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" ng-controller='mainController'>
 	    <div class="nav-bar-area">
 		    <div class="nav-bar">
 			    <ul>
 				    <a href="/#/"><li>Home</li></a>
 				    <li>Learn the system</li>
             <a href="/#/score"><li>Enter your score</li></a>
-				    <li>Contact</li>
+				    <li ng-show='logOut'>Log Out</li>
 			    </ul>
 		    </div>
 	    </div>
     </div>
-    <div ng-view></div>
+    <div ng-view>
+
+    </div>
 
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-route.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-resource.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-cookies.js"></script>
     <script type="text/javascript" src='js/app.js'></script>
     <script type="text/javascript" src='js/controllers/mainController.js'></script>
     <script type="text/javascript" src='js/controllers/signUpController.js'></script>

@@ -1,4 +1,4 @@
-var app = angular.module('bowlingApp', ['ngRoute', 'ngResource']);
+var app = angular.module('bowlingApp', ['ngRoute', 'ngResource', 'ngCookies']);
 
 app.config(function($routeProvider, $locationProvider) {
 

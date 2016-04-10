@@ -6,7 +6,11 @@ Array.prototype.reverseForEach = function(callback){
 }
 
 
-app.controller('mainController', function($scope){
+app.controller('mainController', function($scope, $cookies){
+  $scope.loggedIn = $cookies.get('user')
+  $scope.loggedIn ? $scope.logOut = true : $scope.logOut = false;
+
+
   $scope.gameTotal = 0;
   $scope.frameTenTotal = 0;
   $scope.frames = [
