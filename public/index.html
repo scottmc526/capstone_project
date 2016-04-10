@@ -36,6 +36,12 @@
     <script type="text/javascript" src='js/controllers/mainController.js'></script>
     <script type="text/javascript" src='js/controllers/signUpController.js'></script>
     <script type="text/javascript" src='js/services/mainService.js'></script>
+    <script type="text/javascript" src='/socket.io/socket.io.js'></script>
+    <script>
+      var socket = io('http://localhost:3000')
+      socket.emit('my event', 'hello world')
+      socket.emit('hello', 'hello')
+    </script>
 
 
   </body>
