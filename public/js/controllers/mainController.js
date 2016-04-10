@@ -7,6 +7,8 @@ Array.prototype.reverseForEach = function(callback){
 
 
 app.controller('mainController', function($scope, $cookies){
+  //save user name as cookie, use that name in nav bar
+
   $scope.loggedIn = $cookies.get('user')
   $scope.loggedIn ? $scope.logOut = true : $scope.logOut = false;
 
