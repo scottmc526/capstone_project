@@ -14,6 +14,7 @@ app.controller('mainController', function($scope, $cookies){
   $scope.scoreboard = 0;
 
 
+
   $scope.gameTotal = 0;
   $scope.frameTenTotal = 0;
   $scope.frames = [
@@ -121,7 +122,23 @@ app.controller('mainController', function($scope, $cookies){
 
   socket.on('init', function (data) {
     console.log(data);
+    $scope.name = data.name
+
+    $scope.users = data.users
   });
+
+  socket.on('user:left', function (data) {
+    console.log(data);
+  var i, user;
+  for (i = 0; i < $scope.users.length; i++) {
+    user = $scope.users[i];
+    if (user === data.name) {
+      $scope.users.splice(i, 1);
+      break;
+    }
+  }
+});
+
 
 
 
