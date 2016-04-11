@@ -31,7 +31,7 @@ app.controller('mainController', function($scope, $cookies){
 
   $scope.frameTen = [null, null, null]
 
-  $scope.calculateScore = function() {
+  $scope.calculateScore = function(user) {
 
     $scope.frameTotal = $scope.frames.map(function(frame, i){
       return frame.reduce(function(prev, curr){
@@ -109,18 +109,20 @@ app.controller('mainController', function($scope, $cookies){
     })
 
 
+    $scope.scoreArr = [];
+    socket.emit('updateScore', $scope.gameTotal)
+    $scope.scoreArr.push($scope.gameTotal)
 
-    socket.emit('updateScore', $scope.gameTotal, $scope.scoreArr, $scope.users)
-    socket.on('updateScore', function(data, scoreArr, users){
-      $scope.scoreArr.push(data);
-      $scope.scoreboard = data;
-      // console.log($scope.scoreboard);
+    socket.on('updateScore', function(data){
+      console.log(data);
+      $scope.scoreArr.push(data)
+      console.log($scope.scoreArr);
     })
-
 
   }
 
   socket.on('init', function (data) {
+    console.log(data);
     $scope.name = data.name
     $scope.users = data.users
   });
