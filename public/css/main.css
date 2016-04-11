@@ -40,3 +40,15 @@ a {
   border: none;
   margin-top: 2.5%;
 }
+
+.learn {
+  width: 80%;
+  height: 82%;
+  background-color: white;
+  border-radius: 3px;
+  align-self: center;
+  margin-top: 1%;
+  opacity: .8;
+  font-family: 'Prata', serif;
+
+}
