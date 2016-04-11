@@ -15,6 +15,9 @@ app.config(function($routeProvider, $locationProvider) {
     templateUrl: 'partials/signUp.html',
     controller: 'signUpController'
   })
+  .when('/learn_the_system', {
+    templateUrl: 'partials/learn_the_system.html'
+  })
 
 
 
