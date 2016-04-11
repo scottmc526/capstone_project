@@ -15,9 +15,10 @@
 		    <div class="nav-bar">
 			    <ul>
 				    <a href="/#/"><li>Home</li></a>
-				    <li>Learn the system</li>
             <a href="/#/score"><li>Enter your score</li></a>
-				    <li ng-show='logOut'>Log Out</li>
+            <form method='GET' action="/logout">
+              <input class='logOut' type="submit" ng-show='logOut' value='Log Out'>
+            </form>
 			    </ul>
 		    </div>
 	    </div>
