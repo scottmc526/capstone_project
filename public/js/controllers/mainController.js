@@ -110,34 +110,21 @@ app.controller('mainController', function($scope, $cookies){
 
 
 
-
-    socket.emit('updateScore', $scope.gameTotal)
-    socket.on('updateScore', function(data){
+    socket.emit('updateScore', $scope.gameTotal, $scope.scoreArr, $scope.users)
+    socket.on('updateScore', function(data, scoreArr, users){
+      $scope.scoreArr.push(data);
       $scope.scoreboard = data;
-      console.log($scope.scoreboard);
+      // console.log($scope.scoreboard);
     })
 
 
   }
 
   socket.on('init', function (data) {
-    console.log(data);
     $scope.name = data.name
-
     $scope.users = data.users
   });
 
-  socket.on('user:left', function (data) {
-    console.log(data);
-  var i, user;
-  for (i = 0; i < $scope.users.length; i++) {
-    user = $scope.users[i];
-    if (user === data.name) {
-      $scope.users.splice(i, 1);
-      break;
-    }
-  }
-});
 
 
 

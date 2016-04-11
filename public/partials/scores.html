@@ -1,3 +1,8 @@
+<div>
+  <h1>Scoreboard:</h1>
+  <p ng-repeat='user in users'>{{user}}</p>
+  <textarea name="name" rows="8" cols="40">{{scoreboard}}</textarea>
+</div>
 <form name='player'>
 <div class='container'>
     <div class='scoreCard'>
@@ -47,9 +52,3 @@
     <h2 class='totals bowlingScore'>Total Score: {{gameTotal}}</h2>
   </div>
 </form>
-
-<div>
-  <h1>Scoreboard:</h1>
-  <p ng-repeat='user in users'>Hello, {{user}}</p>
-  <textarea name="name" rows="8" cols="40">{{scoreboard}}</textarea>
-</div>
