@@ -5,9 +5,7 @@ Array.prototype.reverseForEach = function(callback){
   }
 }
 
-
-app.controller('mainController', function($scope, $cookies, $rootScope){
-
+app.controller('mainController', function($scope, $cookies, $rootScope, socketz){
 
   //save user name as cookie, use that name in nav bar
   $scope.loggedIn = $cookies.get('user')
@@ -111,30 +109,21 @@ app.controller('mainController', function($scope, $cookies, $rootScope){
 
 
 
-    socket.emit('updateScore', $scope.gameTotal, $scope.bowler, $scope.name)
-    // $scope.scoreArr.push($scope.gameTotal)
-
-    socket.on('updateScore', function(data){
-      $scope.scoreboard = data;
-      $scope.$apply()
-      // $scope.scoreArr.push(data)
-      // console.log($scope.scoreArr);
+    socketz.emit('updateScore',{
+      score : $scope.gameTotal,
+      bowlerId: $scope.bowler,
+      name: $scope.name
     })
 
-  }
+  };
 
-  socket.on('init', function (data, id, name) {
-    console.log(data);
-    // $scope.users = data.users
+    socketz.on('updateScore', function(data){
+      $scope.scoreboard = data;
+    })
+
+  socketz.on('init', function (data, id, name) {
     $scope.scoreboard = data;
     $scope.bowler = id;
     $scope.name = name
-  });
-
-
-
-
-
-
-
+  })
 })
