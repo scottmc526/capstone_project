@@ -1,14 +1,11 @@
-<h1 class='bowlingScore' ng-show='logOut'>Lets bowl, {{loggedIn}}!</h1>
-<div>
-  <h1>Scoreboard:</h1>
-  <!-- <p ng-repeat='user in users'>{{user.name}} = {{user.score}}</p> -->
-  <p ng-repeat= 'score in scoreboard'>{{score.id}} : {{score.score}}</p>
-
+<div class='scoreboardContainer'>
+  <h1 class='bowlingScore' ng-show='logOut'>Lets bowl, {{loggedIn}}!</h1>
+  <div class='scoreboard'>
+    <h1 class='scoreboardText'>Scoreboard:</h1>
+    <h4 class='scores' ng-repeat= 'score in scoreboard | orderBy: score.gameTotal'>{{score.id}} : {{score.score}}</h4>
+  </div>
 </div>
-<form name='player'>
-
-
-
+<form>
 <div class='container'>
     <div class='scoreCard'>
       <div class='frame' ng-repeat='frame in frames'>

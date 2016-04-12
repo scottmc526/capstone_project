@@ -107,12 +107,11 @@ app.controller('mainController', function($scope, $cookies, $rootScope, socketz)
       return prev + curr
     })
 
-
-
     socketz.emit('updateScore',{
       score : $scope.gameTotal,
       bowlerId: $scope.bowler,
       name: $scope.name
+
     })
 
   };

@@ -57,3 +57,33 @@ a {
   text-decoration: none;
   color: white;
 }
+.scoreboardContainer {
+  height: auto;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.scoreboard {
+  height: auto;
+  width: 30vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.scores {
+  border-radius: 5px;
+  background-color: #f7f1f4;
+  opacity: .9;
+  width: 40%;
+  align-self: center;
+  font-family: 'Prata', serif;
+}
+.scoreboardText {
+  color: #f9c58c;
+  font-family: 'Prata', serif;
+  align-self: center;
+  border-bottom: 1px solid white;
+}
