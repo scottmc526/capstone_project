@@ -1,5 +1,14 @@
 <h1 class='bowlingScore' ng-show='logOut'>Lets bowl, {{loggedIn}}!</h1>
+<div>
+  <h1>Scoreboard:</h1>
+  <!-- <p ng-repeat='user in users'>{{user.name}} = {{user.score}}</p> -->
+  <p ng-repeat= 'score in scoreboard'>{{score.id}} : {{score.score}}</p>
+
+</div>
 <form name='player'>
+
+
+
 <div class='container'>
     <div class='scoreCard'>
       <div class='frame' ng-repeat='frame in frames'>
@@ -8,12 +17,15 @@
 
           <div class='col-xs-8'>
             <p class="bowlingScore">Ball One</p>
-            <input maxlength="1" type="text" class="score" ng-model='frame[0]' ng-change='calculateScore(player)' name='firstBall'>
+
+        <input maxlength="1" type="text" class="score" ng-model='frame[0]' ng-change='calculateScore()'>
+
 
           </div>
           <div class='col-xs-8'>
             <p class='bowlingScore'>Ball Two</p>
-            <input maxlength="1" type="text" class='score' ng-model='frame[1]' ng-change='calculateScore(player)' name='secondBall'>
+
+            <input maxlength="1" type="text" class='score' ng-model='frame[1]' ng-change='calculateScore()'>
           </div>
         </div>
         <div class='total'>
@@ -27,23 +39,22 @@
 
           <div class='col-xs-8'>
             <p class="bowlingScore">Ball One</p>
-            <input maxlength="1" type="text" class="score" ng-model='frameTen[0]' ng-change='calculateScore(player)' name='tenOne'>
-
+            <input maxlength="1" type="text" class="score" ng-model='frameTen[0]' ng-change='calculateScore()'>
           </div>
           <div class='col-xs-8'>
             <p class='bowlingScore'>Ball Two</p>
-            <input maxlength="1" type="text" class='score' ng-model='frameTen[1]' ng-change='calculateScore(player)' name='tenTwo'>
+            <input maxlength="1" type="text" class='score' ng-model='frameTen[1]' ng-change='calculateScore()'>
           </div>
           <div class='col-xs-8'>
             <p class='bowlingScore'>Ball Three</p>
-            <input maxlength="1" type="text" class='score' ng-model='frameTen[2]' ng-change='calculateScore(player)' name='tenThree'>
+            <input maxlength="1" type="text" class='score' ng-model='frameTen[2]' ng-change='calculateScore()'>
           </div>
         </div>
         <div class='total'>
           <h3 class='bowlingScore'>{{frameTenTotal}}</h3>
           <br>
         </div>
-      </div>
+    </div>
     </div>
     <h2 class='totals bowlingScore'>Total Score: {{gameTotal}}</h2>
     <button class='btn btn-warning' ng-show='logOut' type='submit'>Save Score</button>
