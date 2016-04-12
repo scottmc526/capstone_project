@@ -2,7 +2,7 @@
   <h1 class='bowlingScore' ng-show='logOut'>Lets bowl, {{loggedIn}}!</h1>
   <div class='scoreboard'>
     <h1 class='scoreboardText'>Scoreboard:</h1>
-    <h4 class='scores' ng-repeat= 'score in scoreboard | orderBy: score.gameTotal'>{{score.id}} : {{score.score}}</h4>
+    <h4 class='scores' ng-repeat= 'score in scoreboard'>{{score.id}} : {{score.score}}</h4>
   </div>
 </div>
 <form>
