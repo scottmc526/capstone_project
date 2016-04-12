@@ -111,21 +111,24 @@ app.controller('mainController', function($scope, $cookies, $rootScope){
 
 
 
-    socket.emit('updateScore', $scope.gameTotal, $scope.bowler)
+    socket.emit('updateScore', $scope.gameTotal, $scope.bowler, $scope.name)
     // $scope.scoreArr.push($scope.gameTotal)
 
     socket.on('updateScore', function(data){
       $scope.scoreboard = data;
+      $scope.$apply()
       // $scope.scoreArr.push(data)
       // console.log($scope.scoreArr);
     })
 
   }
 
-  socket.on('init', function (data, id) {
+  socket.on('init', function (data, id, name) {
+    console.log(data);
     // $scope.users = data.users
     $scope.scoreboard = data;
     $scope.bowler = id;
+    $scope.name = name
   });
 
 
