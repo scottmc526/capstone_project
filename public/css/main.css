@@ -32,6 +32,7 @@ a {
   background-color: #923e23;
   border: 2px solid #888;
   color: white;
+  border-radius: 3px;\
 }
 .logOut {
   background-color: black;

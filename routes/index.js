@@ -24,9 +24,9 @@ router.post('/login', function(req,res,next){
     if (found) {
       if (bcrypt.compareSync(req.body.password, found.password)){
         res.cookie('user', req.body.namey)
-        res.redirect('/#/score')
+        res.redirect('/#/learn_the_system')
       } else {
-        res.send('invalid username or password')
+        // res.send('invalid username or password')
         res.redirect('/#/')
       }
     } else {
