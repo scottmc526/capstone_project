@@ -46,12 +46,10 @@ a {
 .learn {
   width: 80%;
   height: 83%;
-  background-color: white;
   border-radius: 3px;
   align-self: center;
   margin-top: 1%;
-  opacity: .8;
-  font-family: 'Prata', serif;
+  font-family: 'Righteous', serif;
   padding: 1%;
 
 }
@@ -59,6 +57,7 @@ a {
 .letsBowl {
   text-decoration: none;
   color: white;
+  font-family: 'Righteous', serif;
 }
 .scoreboardContainer {
   height: auto;
