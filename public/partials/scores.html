@@ -1,11 +1,11 @@
 <div class='scoreboardContainer'>
-  <h1 name='namey' class='bowlingScore' ng-show='logOut'>{{loggedIn}}</h1>
+  <h1 name='namey' class='bowlingScore' ng-show='logOut'>Lets bowl, {{loggedIn}}!</h1>
   <div class='scoreboard'>
     <h1 class='scoreboardText'>Scoreboard:</h1>
     <h4 class='scores' ng-repeat= 'score in scoreboard'> {{score.name}} : {{score.score}}</h4>
   </div>
 </div>
-<form ng-submit='submitScore()'>
+<form method='POST' action='/scores'>
 <div class='container'>
     <div class='scoreCard'>
       <div class='frame' ng-repeat='frame in frames'>
@@ -54,6 +54,7 @@
     </div>
     </div>
     <h2 class='totals bowlingScore'>Total Score: {{gameTotal}}</h2>
+    <input type="hidden" name='gameTotal' value ='{{gameTotal}}'>
     <button class='btn btn-warning' ng-show='logOut' type='submit'>Save Score</button>
   </div>
 </form>

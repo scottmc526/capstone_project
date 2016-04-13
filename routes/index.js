@@ -10,6 +10,10 @@ function User () {
   return knex('users')
 }
 
+function Score() {
+  return knex('scores')
+}
+
 router.get('/logout', function(req, res, next){
   res.clearCookie('user')
   res.redirect('/#/');
@@ -46,9 +50,9 @@ router.post('/newuser', function(req, res, next){
   })
 })
 
-router.get('/score', function(req,res,next){
-  User().select().then(function(result){
-    console.log(result);
+router.post('/scores', function(req,res,next){
+  Score().insert({'bowler_name': req.cookies, gameTotal: req.body.gameTotal}).then(function(result){
+    res.redirect('/#/')
   })
 })
 
