@@ -1,1 +1,7 @@
-Sup, {{loggedIn}}
+<h1 class='number bowlingScore'>{{loggedIn}}'s Saved Scores</h1>
+
+<div ng-repeat='score in score_collection'>
+
+  <h3 class='number bowlingScore'>{{score.gameTotal}}</h3>
+</div>
+<a href="/#/score"><button class='btn btn-warning'>Back</button></a>

@@ -22,7 +22,7 @@ app.config(function($routeProvider, $locationProvider) {
   })
   .when('/profile', {
     templateUrl: 'partials/profile.html',
-    controller: 'mainController'
+    controller: 'profileController'
   })
 
 
