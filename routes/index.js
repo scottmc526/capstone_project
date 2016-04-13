@@ -52,7 +52,7 @@ router.post('/newuser', function(req, res, next){
 
 router.post('/scores', function(req,res,next){
   Score().insert({'bowler_name': req.cookies, gameTotal: req.body.gameTotal}).then(function(result){
-    res.redirect('/#/')
+    res.redirect('/#/profile')
   })
 })
 
