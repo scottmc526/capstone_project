@@ -15,7 +15,8 @@ a {
   align-items: center;
   flex-direction: column;
   color: #000;
-  font-family: 'Prata', serif;
+  font-family: 'Righteous', serif;
+  font-size: 19px;
   padding: 2%;
 }
 
@@ -25,7 +26,7 @@ a {
 }
 .sub {
   margin-top: 2%;
-  margin-left: 37%;
+  margin-left: 40%;
 }
 
 .login {
@@ -93,4 +94,11 @@ a {
 .profile {
   justify-content: center;
   /*background-color: rgba(0,0,0,0.6)*/
+}
+
+.signUp {
+  color: #f0ad4e;
+}
+.signUp:hover {
+  color: #923e23;
 }

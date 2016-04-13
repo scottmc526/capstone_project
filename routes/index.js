@@ -30,7 +30,7 @@ router.post('/login', function(req,res,next){
         res.redirect('/#/')
       }
     } else {
-      res.send('invalid')
+      // res.send('invalid')
       res.redirect('/#/')
     }
   })
