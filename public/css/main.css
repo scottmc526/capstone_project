@@ -23,6 +23,7 @@ a {
 .btn {
   border: 2px solid #8b3923;
   align-self: center;
+  font-family: 'Righteous', serif;
 }
 .sub {
   margin-top: 2%;
@@ -74,6 +75,7 @@ a {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 1%;
 }
 .scores {
   border-radius: 5px;
@@ -81,11 +83,11 @@ a {
   opacity: .9;
   width: 40%;
   align-self: center;
-  font-family: 'Prata', serif;
+  font-family: 'Righteous', serif;
 }
 .scoreboardText {
-  color: #f9c58c;
-  font-family: 'Prata', serif;
+  color: #efac4e;
+  font-family: 'Righteous', serif;
   align-self: center;
   border-bottom: 1px solid white;
 }
