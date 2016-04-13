@@ -56,5 +56,11 @@ router.post('/scores', function(req,res,next){
   })
 })
 
+router.get('/scores', function(req,res,next){
+  Score().select().where('bowler_name', req.cookies).then(function(result){
+    console.log(result);
+  })
+})
+
 
 module.exports = router;

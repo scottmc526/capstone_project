@@ -20,6 +20,10 @@ app.config(function($routeProvider, $locationProvider) {
   .when('/learn_the_system', {
     templateUrl: 'partials/learn_the_system.html'
   })
+  .when('/profile', {
+    templateUrl: 'partials/profile.html',
+    controller: 'mainController'
+  })
 
 
 
