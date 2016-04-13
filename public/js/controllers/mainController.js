@@ -110,6 +110,7 @@ app.controller('mainController', function($scope, $cookies, $rootScope, socketz,
       return prev + curr
     })
 
+
     socketz.emit('updateScore',{
       score : $scope.gameTotal,
       bowlerId: $scope.bowler,
@@ -117,6 +118,9 @@ app.controller('mainController', function($scope, $cookies, $rootScope, socketz,
     })
   };
 
+    socketz.emit('init', $scope.loggedIn)
+
+    
     socketz.on('updateScore', function(data){
       $scope.scoreboard = data;
     })
@@ -126,4 +130,8 @@ app.controller('mainController', function($scope, $cookies, $rootScope, socketz,
     $scope.bowler = id;
     $scope.name = name
   })
+
+  // $scope.submitScore = function() {
+  //   console.log($scope.frames);
+  // }
 })

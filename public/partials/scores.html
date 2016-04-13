@@ -5,7 +5,7 @@
     <h4 class='scores' ng-repeat= 'score in scoreboard'> {{score.name}} : {{score.score}}</h4>
   </div>
 </div>
-<form>
+<form ng-submit='submitScore()'>
 <div class='container'>
     <div class='scoreCard'>
       <div class='frame' ng-repeat='frame in frames'>
