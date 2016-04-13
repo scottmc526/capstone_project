@@ -126,9 +126,14 @@ app.controller('mainController', function($scope, $cookies, $rootScope, socketz,
     })
 
   socketz.on('init', function (data, id, name) {
-    $scope.scoreboard = data;
-    $scope.bowler = id;
-    $scope.name = name
+    if ($scope.scoreboard){
+        console.log("already initialized");
+    } else {
+      $scope.scoreboard = data;
+      $scope.bowler = id;
+      $scope.name = name
+    }
+
   })
 
   $scope.leaveGame = function(){

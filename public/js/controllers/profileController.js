@@ -1,5 +1,6 @@
 app.controller('profileController', function($scope, $cookies, profileService, $http){
   $scope.loggedIn = $cookies.get('user')
+  $scope.loggedIn ? $scope.logOut = true : $scope.logOut = false;
 
   $scope.average = 0;
   $scope.totalScore = 0;
