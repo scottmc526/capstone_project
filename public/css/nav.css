@@ -10,7 +10,6 @@ html, body{
 
 .wrapper{
   width: 100%;
-  /*max-width: 960px;*/
   margin: 0 auto;
   padding: 0;
 }
@@ -41,7 +40,7 @@ ul li{
   cursor:pointer;
   line-height: 225%;
   font-family: 'Righteous', serif;
-  font-size: 16px; 
+  font-size: 16px;
 }
 
 li:hover{

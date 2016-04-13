@@ -52,7 +52,10 @@ a {
   margin-top: 1%;
   font-family: 'Righteous', serif;
   padding: 1%;
-
+}
+.saved {
+  border-bottom: 2px solid #923e23;
+  width: 50%;
 }
 
 .letsBowl {

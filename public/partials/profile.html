@@ -1,11 +1,12 @@
 <div class='container'>
   <div class='learn'>
-
-    <h1 class='number bowlingScore'>{{loggedIn}}'s Saved Scores</h1>
+    <div class='saved'>
+      <h1 class='number bowlingScore'>{{loggedIn}}'s Saved Scores</h1>
+    </div>
 
     <div ng-repeat='score in score_collection'>
 
-      <h3 class='number bowlingScore'>{{score.gameTotal}}</h3>
+      <h3 class='number bowlingScore'>Game {{score.id}}: {{score.gameTotal}}</h3>
     </div>
     <h3 class='number bowlingScore'>Average = {{average}}</h3>
     <a href="/#/score"><button class='btn btn-warning'>Back</button></a>
