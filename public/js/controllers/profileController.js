@@ -8,7 +8,7 @@ app.controller('profileController', function($scope, $cookies, profileService, $
     for (var i = 0; i < $scope.score_collection.length; i++) {
       $scope.totalScore += Number($scope.score_collection[i]['gameTotal'])
     }
-    $scope.average = $scope.totalScore / $scope.score_collection.length
+    $scope.average = Math.round($scope.totalScore / $scope.score_collection.length)
   })
 
 })
