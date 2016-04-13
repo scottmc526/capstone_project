@@ -46,6 +46,11 @@ router.post('/newuser', function(req, res, next){
   })
 })
 
+router.get('/score', function(req,res,next){
+  User().select().then(function(result){
+    console.log(result);
+  })
+})
 
 
 module.exports = router;

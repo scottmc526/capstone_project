@@ -13,7 +13,6 @@
   flex-direction: row;
 }
 
-
 .frame {
   background-color: #fac68e;
   border: 1px solid black;
@@ -52,6 +51,9 @@
 .totals {
   align-self: center;
   margin-left: -20%;
+}
+.number {
+  font-size: 3em;
 }
 
 

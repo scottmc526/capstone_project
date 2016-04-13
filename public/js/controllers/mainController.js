@@ -5,7 +5,10 @@ Array.prototype.reverseForEach = function(callback){
   }
 }
 
-app.controller('mainController', function($scope, $cookies, $rootScope, socketz){
+app.controller('mainController', function($scope, $cookies, $rootScope, socketz, $route){
+
+
+
 
   //save user name as cookie, use that name in nav bar
   $scope.loggedIn = $cookies.get('user')
@@ -111,9 +114,7 @@ app.controller('mainController', function($scope, $cookies, $rootScope, socketz)
       score : $scope.gameTotal,
       bowlerId: $scope.bowler,
       name: $scope.name
-
     })
-
   };
 
     socketz.on('updateScore', function(data){
