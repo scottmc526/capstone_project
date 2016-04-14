@@ -7,6 +7,8 @@ Array.prototype.reverseForEach = function(callback){
 
 app.controller('mainController', function($scope, $cookies, $rootScope, socketz, $route){
 
+  $scope.joinedRoom = false;
+
 
 
 
@@ -113,32 +115,37 @@ app.controller('mainController', function($scope, $cookies, $rootScope, socketz,
 
     socketz.emit('updateScore',{
       score : $scope.gameTotal,
-      bowlerId: $scope.bowler,
-      name: $scope.name
+      name: $scope.loggedIn,
     })
   };
 
-    socketz.emit('init', $scope.loggedIn)
-
 
     socketz.on('updateScore', function(data){
+      console.log(data)
       $scope.scoreboard = data;
     })
 
-  socketz.on('init', function (data, id, name) {
-    if ($scope.scoreboard){
-        console.log("already initialized");
-    } else {
-      $scope.scoreboard = data;
-      $scope.bowler = id;
-      $scope.name = name
-    }
 
-  })
 
   $scope.leaveGame = function(){
     socketz.emit('leaveGame', $scope.loggedIn)
+    alert('You\'ve left the game')
+    $scope.joinedRoom = false;
+    $scope.currentGameRoom = false;
   }
+
+  $scope.joinGameRoom = function(){
+    $scope.currentGameRoom = $scope.gameRoom;
+    socketz.emit('joinGame', {
+      room: $scope.gameRoom,
+      userName: $scope.loggedIn
+    })
+  }
+
+  socketz.on('joinedRoom', function(){
+    $scope.joinedRoom = true;
+
+  })
 
 
   // $scope.submitScore = function() {

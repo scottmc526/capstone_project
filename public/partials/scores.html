@@ -2,8 +2,21 @@
   <h1 name='namey' class='bowlingScore' ng-show='logOut'>Lets bowl, <a class='signUp' href="/#/profile">{{loggedIn}}</a>!</h1>
   <div class='scoreboard'>
     <h1 class='scoreboardText'>Scoreboard:</h1>
-    <h4 class='scores' ng-repeat= 'score in scoreboard'> {{score.name}} : {{score.score}} </h4>
-    <button class='btn btn-warning' ng-click='leaveGame()'>Leave Game</button>
+
+    <div ng-show="loggedIn && !joinedRoom">
+
+      <h2>Join Game</h2>
+
+      <input ng-model="gameRoom" type="text" />
+      <button ng-click="joinGameRoom()">Join Game Room</button>
+
+    </div>
+
+    <div ng-show="loggedIn && joinedRoom">
+      <h2>You're in {{currentGameRoom}}</h2>
+      <h4 class='scores' ng-repeat= 'score in scoreboard | orderBy:"-score" '> {{score.name}} : {{score.score}} </h4>
+      <button class='btn btn-warning' ng-click='leaveGame()'>Leave Game</button>
+    </div>
   </div>
 </div>
 <form method='POST' action='/scores'>
