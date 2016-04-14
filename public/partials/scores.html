@@ -1,19 +1,19 @@
 <div class='scoreboardContainer'>
-  <h1 name='namey' class='bowlingScore' ng-show='logOut'>Lets bowl, <a class='signUp' href="/#/profile">{{loggedIn}}</a>!</h1>
+  <h1 name='namey' class='bowlingScore' ng-show='logOut'>Lets bowl, <a class='signUp' href="/#/profile">{{loggedIn}}</a><span style='color:#f0ad4e'>!</span></h1>
   <div class='scoreboard'>
     <h1 class='scoreboardText'>Scoreboard:</h1>
 
     <div ng-show="loggedIn && !joinedRoom">
 
-      <h2>Join Game</h2>
+      <h2 style='color:#f0ad4e' class='bowlingScore'>Join Game</h2>
 
-      <input ng-model="gameRoom" type="text" />
-      <button ng-click="joinGameRoom()">Join Game Room</button>
+      <input class='login' ng-model="gameRoom" type="text" />
+      <button class='btn btn-warning' ng-click="joinGameRoom()">Join Game Room</button>
 
     </div>
 
     <div ng-show="loggedIn && joinedRoom">
-      <h2>You're in {{currentGameRoom}}</h2>
+      <h2 class='bowlingScore'>You're in {{currentGameRoom}}</h2>
       <h4 class='scores' ng-repeat= 'score in scoreboard | orderBy:"-score" '> {{score.name}} : {{score.score}} </h4>
       <button class='btn btn-warning' ng-click='leaveGame()'>Leave Game</button>
     </div>
