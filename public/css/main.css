@@ -15,7 +15,7 @@ a {
   align-items: center;
   flex-direction: column;
   color: #000;
-  font-family: 'Righteous', serif;
+  font-family: 'Muli', sans-serif;
   font-size: 19px;
   padding: 2%;
 }
@@ -23,7 +23,7 @@ a {
 .btn {
   border: 2px solid #8b3923;
   align-self: center;
-  font-family: 'Righteous', serif;
+  font-family: 'Muli', sans-serif;
 }
 .sub {
   margin-top: 2%;
@@ -34,12 +34,12 @@ a {
   background-color: #923e23;
   border: 2px solid #888;
   color: white;
-  border-radius: 3px;\
+  border-radius: 3px;
 }
 .logOut {
   background-color: black;
   color: white;
-  font-family: 'Prata', serif;
+  font-family: 'Muli', sans-serif;
   border: none;
   margin-top: 2.5%;
 }
@@ -50,7 +50,7 @@ a {
   border-radius: 3px;
   align-self: center;
   margin-top: 1%;
-  font-family: 'Righteous', serif;
+  font-family: 'Muli', sans-serif;
   padding: 1%;
 }
 .saved {
@@ -86,11 +86,11 @@ a {
   opacity: .9;
   width: 40%;
   align-self: center;
-  font-family: 'Righteous', serif;
+  font-family: 'Muli', sans-serif;
 }
 .scoreboardText {
   color: #efac4e;
-  font-family: 'Righteous', serif;
+  font-family: 'Muli', sans-serif;
   align-self: center;
   border-bottom: 1px solid white;
 }
