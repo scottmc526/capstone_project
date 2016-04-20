@@ -6,8 +6,11 @@ app.config(function($routeProvider, $locationProvider) {
 
   $routeProvider
   .when('/', {
-    templateUrl: 'partials/home.html',
+    templateUrl: 'partials/about.html',
     // controller: 'mainController'
+  })
+  .when('/login', {
+    templateUrl: 'partials/home.html'
   })
   .when('/score', {
     templateUrl: 'partials/scores.html',
