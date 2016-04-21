@@ -106,3 +106,12 @@ a {
 .signUp:hover {
   color: #923e23;
 }
+
+.loginInfo {
+  background-color: lightgray;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  padding: 3em;
+}
