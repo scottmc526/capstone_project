@@ -6,4 +6,4 @@ This is my capstone project for Galvanize. The app is made to help someone who i
 2. cd in the directory and npm install
 
 # Deployed version:
-bowlingscore.herokuapp.com
+[bowlingscore.herokuapp.com](http://bowlingscore.herokuapp.com)
