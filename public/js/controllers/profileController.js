@@ -1,9 +1,9 @@
 app.controller('profileController', function($scope, $cookies, profileService, $http){
   $scope.loggedIn = $cookies.get('user')
   $scope.loggedIn ? $scope.logOut = true : $scope.logOut = false;
-
   $scope.average = 0;
   $scope.totalScore = 0;
+
   profileService.getScores().then(function(result){
     $scope.score_collection = result.data
     for (var i = 0; i < $scope.score_collection.length; i++) {

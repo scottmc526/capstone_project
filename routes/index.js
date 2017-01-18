@@ -3,9 +3,6 @@ var router = express.Router();
 var knex = require('../db/knex');
 var bcrypt = require('bcrypt');
 
-
-
-
 function User () {
   return knex('users')
 }

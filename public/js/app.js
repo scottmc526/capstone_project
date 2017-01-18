@@ -1,13 +1,10 @@
 var app = angular.module('bowlingApp', ['ngRoute', 'ngResource', 'ngCookies']);
 
-
-
 app.config(function($routeProvider, $locationProvider) {
 
   $routeProvider
   .when('/', {
     templateUrl: 'partials/about.html',
-    // controller: 'mainController'
   })
   .when('/login', {
     templateUrl: 'partials/home.html'
@@ -27,7 +24,5 @@ app.config(function($routeProvider, $locationProvider) {
     templateUrl: 'partials/profile.html',
     controller: 'profileController'
   })
-
-
 
 })

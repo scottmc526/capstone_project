@@ -9,15 +9,10 @@ app.controller('mainController', function($scope, $cookies, $rootScope, socketz,
 
   $scope.joinedRoom = false;
 
-
-
-
   //save user name as cookie, use that name in nav bar
   $scope.loggedIn = $cookies.get('user')
   $scope.loggedIn ? $scope.logOut = true : $scope.logOut = false;
   $scope.scoreboard = 0;
-
-
 
   $scope.gameTotal = 0;
   $scope.frameTenTotal = 0;
@@ -107,11 +102,9 @@ app.controller('mainController', function($scope, $cookies, $rootScope, socketz,
       return +prev + +curr
     }, 0)
 
-
     $scope.gameTotal = $scope.frameTenTotal + $scope.frameTotal.reduce(function(prev, curr){
       return prev + curr
     })
-
 
     socketz.emit('updateScore',{
       score : $scope.gameTotal,
@@ -119,13 +112,9 @@ app.controller('mainController', function($scope, $cookies, $rootScope, socketz,
     })
   };
 
-
-    socketz.on('updateScore', function(data){
-      console.log(data)
+  socketz.on('updateScore', function(data){
       $scope.scoreboard = data;
     })
-
-
 
   $scope.leaveGame = function(){
     socketz.emit('leaveGame', $scope.loggedIn)
@@ -144,11 +133,5 @@ app.controller('mainController', function($scope, $cookies, $rootScope, socketz,
 
   socketz.on('joinedRoom', function(){
     $scope.joinedRoom = true;
-
   })
-
-
-  // $scope.submitScore = function() {
-  //   console.log($scope.frames);
-  // }
 })
